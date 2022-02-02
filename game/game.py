@@ -1,3 +1,6 @@
+from game.jumperman import Jumperman
+from game.ramdomword import RandomWord
+
 
 class Game(object):
 
