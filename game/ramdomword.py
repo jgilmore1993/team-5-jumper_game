@@ -10,6 +10,8 @@ class RandomWord(object):
             for line in f:
                 words_list.append(line.rstrip('\r\n'))
             self.word = random.choice(words_list)
+            print(words_list)
+            print(self.word)
 
     def display(self, guessed_letters_list):
         """
@@ -23,3 +25,14 @@ class RandomWord(object):
                 word_to_display += " _ "
         print ("This is your word so far:", word_to_display, "\n")
         return word_to_display
+
+
+
+    #             if letter_guess not in self.secret_word.word:
+    #                 print (random.choice(self.WRONG_ANSWER_PUTDOWNS))
+    #                 self.num_incorrect_guesses_made += 1
+    #                 self.jumperman.draw(self.num_incorrect_guesses_made)
+    #             else:
+    #                 print ("You chose wisely!\n")
+    #                 self.jumperman.draw(self.num_incorrect_guesses_made)
+        

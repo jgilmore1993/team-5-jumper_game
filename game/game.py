@@ -3,16 +3,15 @@ from game.ramdomword import RandomWord
 
 
 class Game(object):
-
-    WRONG_ANSWER_PUTDOWNS = ["NOPE!",
-                             "Wow, you suck at hangman.",
-                             "Your guy doesn't stand a chance!",
-                             "You're leaving him high and dry"]
-    def __init__(self, filename):
+    
+     
+    def __init__(self):
+        filename = "game\word_list.txt"
         self.secret_word = RandomWord(filename)
         self.jumperman = Jumperman()
         self.num_incorrect_guesses_made = 0
         self.guessed_letters = []
+        self._is_playing = True
 
     def play(self):
         """
@@ -20,6 +19,59 @@ class Game(object):
         """
 
         print ("\n****** Welcome to Jumperman! ******\n")
+        while self._is_playing:
+            self._get_inputs()
+            self._do_updates()
+            self._do_outputs()
+
+
+
+    def _get_inputs(self):
+        """Moves the seeker to a new location.
+
+        Args:
+            self (Director): An instance of Director.
+        """
+        print( self.jumperman)
+        print()
+        
+       
+        guess_letter = input("Guess a letter: ")
+
+        self.guessed_letters.append(guess_letter)
+
+
+       
+        
+    def _do_updates(self):
+        """Keeps watch on where the seeker is moving.
+
+        Args:
+            self (Director): An instance of Director.
+        """
+        #check in ramdom words or new class to do the calculation
+
+        #if letter is in the ramdom word continue otherwise delete it and delete one life from the Jumper pics
+   
+        
+    def _do_outputs(self):
+        """Provides a hint for the seeker to use.
+
+        Args:
+            self (Director): An instance of Director.
+        """
+
+        # print the current pic from jumperman class and the guessed letter so far. 
+        # 
+        # 
+        # 
+        #   
+        #Enos sugestion code. 
+        # hint = self._hider.get_hint()
+        # self._terminal_service.write_text(hint)
+        # if self._hider.is_found():
+        #     self._is_playing = False
+
         # option = raw_input("Do you need the rules explained to you? Y/n: ")
 
     #    # if option.lower() == "y": 
