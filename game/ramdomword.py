@@ -28,11 +28,5 @@ class RandomWord(object):
 
 
 
-    #             if letter_guess not in self.secret_word.word:
-    #                 print (random.choice(self.WRONG_ANSWER_PUTDOWNS))
-    #                 self.num_incorrect_guesses_made += 1
-    #                 self.jumperman.draw(self.num_incorrect_guesses_made)
-    #             else:
-    #                 print ("You chose wisely!\n")
-    #                 self.jumperman.draw(self.num_incorrect_guesses_made)
+
         
