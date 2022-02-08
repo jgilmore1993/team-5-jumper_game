@@ -60,7 +60,9 @@ class Game(object):
             if len(self.guessed_letters) == 0:
                 self.secret_word.display(self.guessed_letters)
             letter_guess = input("Please guess a letter: ").lower()
- 
+            
+
+
             if letter_guess not in self.guessed_letters:
                 self.guessed_letters.append(letter_guess)
 
@@ -75,7 +77,7 @@ class Game(object):
                 print ("You've already guessed the letter '%s', please choose a new letter." % letter_guess)
 
             current_word = self.secret_word.display(self.guessed_letters)
-            print ("These are the letters you've already guessed: ", self.guessed_letters)
+            print ("These are the letters you've already choosen so far: ", self.guessed_letters)
             if "_" not in current_word:
                 print ("Congratulations! You've won!")
        
