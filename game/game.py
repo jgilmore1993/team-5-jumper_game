@@ -6,7 +6,7 @@ class Game(object):
     
      
     def __init__(self):
-        filename = "game\word_list.txt"
+        filename = "team-5-jumper_game\game\word_list.txt"
         self.secret_word = RandomWord(filename)
         self.jumperman = Jumperman()
         self.num_incorrect_guesses_made = 0
