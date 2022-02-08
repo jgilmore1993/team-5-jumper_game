@@ -1,5 +1,7 @@
 from game.jumperman import Jumperman
 from game.ramdomword import RandomWord
+from game.guessed_letters import Guessed_letters
+from game.word_list import word_list
 
 
 class Game(object):
@@ -10,7 +12,7 @@ class Game(object):
         self.secret_word = RandomWord(filename)
         self.jumperman = Jumperman()
         self.num_incorrect_guesses_made = 0
-        self.guessed_letters = []
+        self.guessed_letters = [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
         self._is_playing = True
 
     def play(self):
