@@ -1,5 +1,7 @@
 from game.jumperman import Jumperman
 from game.ramdomword import RandomWord
+from game.guessed_letters import Guessed_letters
+from game.word_list import word_list
 
 
 class Game(object):
