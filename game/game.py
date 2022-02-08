@@ -33,7 +33,7 @@ class Game(object):
         Args:
             self (Director): An instance of Director.
         """
-        print( self.jumperman)
+  
         print()
         
        

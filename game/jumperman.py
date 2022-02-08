@@ -68,5 +68,9 @@ class Jumperman(object):
         print(self.JUMPERMAN_PICS[num_incorrect_guesses_made] )
         
 
-        # if num_incorrect_guesses_made == 5:
-        #     print ("You died!!")
+        if num_incorrect_guesses_made == 5:
+            print ("You died!!")
+
+       
+
+      
