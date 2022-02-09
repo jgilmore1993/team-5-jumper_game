@@ -1,3 +1,5 @@
+ 
+
 class Jumperman(object):
 
     JUMPERMAN_PICS = [''' 
@@ -70,6 +72,8 @@ class Jumperman(object):
 
         if num_incorrect_guesses_made == 5:
             print ("You died!!")
+            
+  
 
        
 

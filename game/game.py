@@ -13,7 +13,7 @@ class Game(object):
         self.num_incorrect_guesses_made = 0
         self.guessed_letters = [ ]
         self._is_playing = True
-      
+        self.letter_guess = ""
 
     def play(self):
         """
@@ -38,44 +38,55 @@ class Game(object):
         print()
 
 
-        guess_letter = input("Guess a letter: ")
+        self.letter_guess = input("Guess a letter: ")
 
-        self.guessed_letters.append(guess_letter)
+        self.guessed_letters.append(self.letter_guess)
         print(self.guessed_letters)
 
 
        
         
     def _do_updates(self):
-        """Keeps watch on where the seeker is moving.
+            """Keeps watch on where the seeker is moving.
 
-        Args:
-            self (Director): An instance of Director.
-        """
-        #check in ramdom words or new class to do the calculation
+            Args:
+                self (Director): An instance of Director.
+            """
+            #check in ramdom words or new class to do the calculation
 
-        #if letter is in the ramdom word continue otherwise delete it and delete one life from the Jumper pics
+            #if letter is in the ramdom word continue otherwise delete it and delete one life from the Jumper pics
 
         
-        while self.num_incorrect_guesses_made < 5:
-            if len(self.guessed_letters) == 0:
-                self.secret_word.display(self.guessed_letters)
-            letter_guess = input("Please guess a letter: ").lower()
+     
+
+
+
+            # if len(self.guessed_letters) == 0:               
+
+            #     self.secret_word.display(self.guessed_letters)
+            # letter_guess = input("Please guess a letter: ").lower()
             
 
 
-            if letter_guess not in self.guessed_letters:
-                self.guessed_letters.append(letter_guess)
+            # if letter_guess not in self.guessed_letters:
+            #     self.guessed_letters.append(letter_guess)
 
-                if letter_guess not in self.secret_word.word:
+            
+         
+             
+
+            if self.letter_guess not in self.secret_word.word:
                    
                     self.num_incorrect_guesses_made += 1
                     self.jumperman.draw(self.num_incorrect_guesses_made)
-                else:
+
+                    if self.num_incorrect_guesses_made == 5:
+                        self._is_playing = False
+            else:
                     print ("You chose wisely!\n")
                     self.jumperman.draw(self.num_incorrect_guesses_made)
-            else:
-                print ("You've already guessed the letter '%s', please choose a new letter." % letter_guess)
+         
+            print ("You've already guessed the letter '%s', please choose a new letter." % self.guessed_letters)
 
             current_word = self.secret_word.display(self.guessed_letters)
             print ("These are the letters you've already choosen so far: ", self.guessed_letters)
@@ -92,15 +103,11 @@ class Game(object):
 
 
         """
-
+        if not self._is_playing:
+            return
          
-
-        # print the current pic from jumperman class and the guessed letter so far. 
-        # 
-        # 
-        # 
-        #   
- 
+        
+      
  
 
  
