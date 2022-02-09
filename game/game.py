@@ -1,11 +1,13 @@
-from jumperman import Jumperman
-from ramdomword import RandomWord
- 
+from game import read_list
+from game import read_list
+from game.jumperman import Jumperman
+from game.ramdomword import RandomWord
+
 
 
 class Game(object):
+
     
-     
     def __init__(self):
         filename = "game\word_list.txt"
         self.secret_word = RandomWord(filename)
@@ -13,6 +15,12 @@ class Game(object):
         self.num_incorrect_guesses_made = 0
         self.guessed_letters = [ ]
         self._is_playing = True
+        Guessed_letters = read_list("Guessed_letters.txt")
+        print(Guessed_letters)
+        read_list (Guessed_letters)
+        word_list = read_list("word_list.txt")
+        print(word_list)
+        read_list (word_list)
 
     def play(self):
         """
@@ -24,19 +32,19 @@ class Game(object):
             self._get_inputs()
             self._do_updates()
             self._do_outputs()
-
+    
 
 
     def _get_inputs(self):
         """Moves the seeker to a new location.
-
+        
         Args:
             self (Director): An instance of Director.
         """
-  
+
         print()
-        
-       
+
+
         guess_letter = input("Guess a letter: ")
 
         self.guessed_letters.append(guess_letter)
