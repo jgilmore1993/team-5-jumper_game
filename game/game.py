@@ -1,5 +1,5 @@
-from game.jumperman import Jumperman
-from game.ramdomword import RandomWord
+from jumperman import Jumperman
+from ramdomword import RandomWord
  
 
 
