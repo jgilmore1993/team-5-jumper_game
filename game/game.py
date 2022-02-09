@@ -1,5 +1,3 @@
-from game import read_list
-from game import read_list
 from game.jumperman import Jumperman
 from game.ramdomword import RandomWord
 
@@ -15,12 +13,7 @@ class Game(object):
         self.num_incorrect_guesses_made = 0
         self.guessed_letters = [ ]
         self._is_playing = True
-        Guessed_letters = read_list("Guessed_letters.txt")
-        print(Guessed_letters)
-        read_list (Guessed_letters)
-        word_list = read_list("word_list.txt")
-        print(word_list)
-        read_list (word_list)
+      
 
     def play(self):
         """
