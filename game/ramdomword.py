@@ -7,7 +7,7 @@ class RandomWord(object):
     """
     def __init__(self):
         
-            word_list = ["anarchism", "capitalism", "communism", "conservatism"]
+            word_list = ["anarchism", "capitalism", "communism", "socialism"]
             self._word = random.choice(word_list)
             
             

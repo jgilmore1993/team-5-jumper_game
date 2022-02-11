@@ -30,7 +30,7 @@ class Game(object):
 
 
     def _get_inputs(self):
-        """Moves the seeker to a new location.
+        """Gets the guess letter.
         
         Args:
             self (Director): An instance of Director.
@@ -41,13 +41,13 @@ class Game(object):
         self.letter_guess = input("Guess a letter: ")
 
         self.guessed_letters.append(self.letter_guess)
-        print(self.guessed_letters)
+        
 
          
        
         
     def _do_updates(self):
-            """Keeps watch on where the seeker is moving.
+            """Keeps watch on where the guess letter is on the secret word.
 
             Args:
                 self (Director): An instance of Director.
@@ -64,29 +64,10 @@ class Game(object):
                     print ("You chose wisely!\n")
                     self.jumperman.draw(self.num_incorrect_guesses_made)
          
-            # print ("You've already guessed the letter '%s', please choose a new letter." % self.guessed_letters)
-
+            #
             current_word = self.secret_word.display(self.guessed_letters)
             print ("These are the letters you've already choosen so far: ", self.guessed_letters)
             if "_" not in current_word:
                 print ("Congratulations! You've won!")
                 self._is_playing = False
-       
-   
-        
-    # def _do_outputs(self):
-    #     """Provides a hint for the seeker to use.
-
-    #     Args:
-    #         self (Director): An instance of Director.
-
-
-    #     """
-    #     if not self._is_playing:
-    #         return
-         
-        
-      
- 
-
- 
+  
